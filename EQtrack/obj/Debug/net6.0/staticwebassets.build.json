@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ufFp4z9mFR/MYhHlmCjMjwDWdEr3GtiO42F9ret3WF4=",
+  "Hash": "e5e4gv+7ouE0nyvLM9uHAWOVMJOS/ykzdpn2bkMr4lg=",
   "Source": "EQtrack",
   "BasePath": "_content/EQtrack",
   "Mode": "Default",
@@ -729,6 +729,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\wwwroot\\lib\\bootstrap\\dist\\css\\fonts\\bootstrap-icons.woff",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "lib/bootstrap/dist/css/fonts/bootstrap-icons.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\fonts\\bootstrap-icons.woff"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\wwwroot\\lib\\bootstrap\\dist\\css\\fonts\\bootstrap-icons.woff2",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "lib/bootstrap/dist/css/fonts/bootstrap-icons.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\fonts\\bootstrap-icons.woff2"
     },
     {
       "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
