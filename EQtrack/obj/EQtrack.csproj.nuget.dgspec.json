@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\EQtrack.csproj": {}
+    "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\EQtrack.csproj": {}
   },
   "projects": {
-    "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\EQtrack.csproj": {
+    "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\EQtrack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\EQtrack.csproj",
+        "projectUniqueName": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\EQtrack.csproj",
         "projectName": "EQtrack",
-        "projectPath": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\EQtrack.csproj",
+        "projectPath": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\EQtrack.csproj",
         "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
-        "outputPath": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack\\EQtrack\\obj\\",
+        "outputPath": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
