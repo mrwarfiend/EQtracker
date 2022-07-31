@@ -10,7 +10,7 @@ namespace EQtrack.Models
 
         }
 
-        public DbSet<Category> Categorys { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<tool> Tools { get; set; }
         public DbSet<inventory> Inventories { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
