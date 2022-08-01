@@ -9,20 +9,21 @@ namespace EQtrack.Models
     //nessicary roles.
     public class ReturnTicket
     {
-
-        [Required]
+        
+        //[Required]
         public int id { get; set; }
-        [Display(Name = "Time of Return?"), Required]
+        [Display(Name = "Time of Return"), Required]
         public DateTime TimeStamp { get; set; } = DateTime.Now;
 
-
+        //consider placing this or a copy in the ticket model
         [ForeignKey("Tool"), Required]
         public int toolID;
         public tool? Tool { get; set; }
 
+        //
 
         [Display(Name = "Condition")]
-        public string? Condition { get; set; }
+        public string Condition { get; set; }
         [Required]
         public bool repairNeeded;
 
