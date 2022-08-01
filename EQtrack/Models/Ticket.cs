@@ -16,5 +16,7 @@ namespace EQtrack.Models
         //Things to consider. The checkout ticket has id for itself, but not the tool or person checking it out?
         //We may need to add those sooner or later.
 
+        //toolid with foreign key
+        //user e-mail
     }
 }

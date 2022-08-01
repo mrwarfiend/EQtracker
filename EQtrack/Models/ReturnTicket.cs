@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EQtrack.Models
@@ -12,20 +13,22 @@ namespace EQtrack.Models
         
         //[Required]
         public int id { get; set; }
+
+
         [Display(Name = "Time of Return"), Required]
         public DateTime TimeStamp { get; set; } = DateTime.Now;
 
         //consider placing this or a copy in the ticket model
-        [ForeignKey("Tool"), Required]
-        public int toolID;
-        public tool? Tool { get; set; }
+        [ForeignKey("Tool2"), Required]
+        public int toolID { get; set; }
+        public tool? Tool2 { get; set; }
 
         //
 
-        [Display(Name = "Condition")]
-        public string Condition { get; set; }
+        [Display(Name = "Condition"), Required]
+        public string? Condition { get; set; }
         [Required]
-        public bool repairNeeded;
+        public bool? repairNeeded;
 
 
     }
