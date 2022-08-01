@@ -1,4 +1,5 @@
 using EQtrack.Data;
+using EQtrack.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 //Added 7.31.2022 Sean
 var connectionString2 = builder.Configuration.GetConnectionString("ModelsContext");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<ModelsContext>(options =>
     options.UseSqlServer(connectionString2));
 
 
