@@ -20,7 +20,7 @@ namespace EQtrack.Models
         [Display(Name = "Tools")]
         public tool? Tool { get; set; }
 
-        public int count;
+        public int count { get; set; }
 
     }
 }

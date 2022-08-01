@@ -27,8 +27,10 @@ namespace EQtrack.Models
 
         [Display(Name = "Condition"), Required]
         public string? Condition { get; set; }
+
+        //
         [Required]
-        public bool? repairNeeded;
+        public bool? repairNeeded { get; set; }
 
 
     }
