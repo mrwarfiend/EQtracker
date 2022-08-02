@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EQtrack
 build_property.RootNamespace = EQtrack
-build_property.ProjectDir = C:\GenSpark\Learning\Projects\TigerTeam\EQtrack\EQtrack-Fixed\EQtrack\
+build_property.ProjectDir = D:\visual projects\source\repos\proj1 third time\EQtrack\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\GenSpark\Learning\Projects\TigerTeam\EQtrack\EQtrack-Fixed\EQtrack
+build_property.MSBuildProjectDirectory = D:\visual projects\source\repos\proj1 third time\EQtrack
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Home/Index.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Home/Privacy.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Reviews/Index.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Reviews/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Shared/Error.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Shared/_AppLayout.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Shared/_AppLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BcHBMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Shared/_HomeLayout.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Shared/_HomeLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ib21lTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Shared/_LoginPartial.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/_ViewImports.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/_ViewStart.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GenSpark/Learning/Projects/TigerTeam/EQtrack/EQtrack-Fixed/EQtrack/Views/Shared/_Layout.cshtml]
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-74kj5uff20
