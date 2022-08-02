@@ -44,6 +44,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection": {
+              "target": "Package",
+              "version": "[3.19.0, )"
+            },
+            "JavaScriptEngineSwitcher.V8": {
+              "target": "Package",
+              "version": "[3.19.0, )"
+            },
+            "JavaScriptEngineSwitcher.V8.Native.win-x64": {
+              "target": "Package",
+              "version": "[3.18.4, )"
+            },
+            "JavaScriptEngineSwitcher.V8.Native.win-x86": {
+              "target": "Package",
+              "version": "[3.18.4, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.6, )"
@@ -63,6 +79,14 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[6.0.6, )"
+            },
+            "React.AspNet": {
+              "target": "Package",
+              "version": "[5.2.12, )"
+            },
+            "React.Router": {
+              "target": "Package",
+              "version": "[5.2.12, )"
             }
           },
           "imports": [
