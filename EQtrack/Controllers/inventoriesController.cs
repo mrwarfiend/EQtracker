@@ -56,7 +56,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,toolID,count")] inventory inventory)
+        public async Task<IActionResult> Create([Bind("id,name,toolID,count,flag")] inventory inventory)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,toolID,count")] inventory inventory)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,toolID,count,flag")] inventory inventory)
         {
             if (id != inventory.id)
             {
