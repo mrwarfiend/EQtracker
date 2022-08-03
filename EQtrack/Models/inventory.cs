@@ -21,6 +21,11 @@ namespace EQtrack.Models
         public tool? Tool { get; set; }
 
         public int count { get; set; }
+        public bool flag { get; set; }
+
+        //move flag form tools to inventory
+        //might just keep flag in tools.
+        //may require list of tools
 
     }
 }

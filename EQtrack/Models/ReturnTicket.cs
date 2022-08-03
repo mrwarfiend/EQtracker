@@ -32,6 +32,15 @@ namespace EQtrack.Models
         [Required]
         public bool? repairNeeded { get; set; }
 
+        //on succesful return, count is increased.
+
+
+        //in addition to the person returning ticket
+        //get id of person reciving ticket
+        //also authrized need to be added in controller
+        //authrization for return.
+
+        public string? userEmail{ get; set; }
 
     }
 }

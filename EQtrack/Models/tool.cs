@@ -22,7 +22,7 @@ namespace EQtrack.Models
         public Category? Categ { get; set; }
 
 
-
+        //this may go unused
         public bool flag { get; set; }
 
         [Display(Name = "Description")]
