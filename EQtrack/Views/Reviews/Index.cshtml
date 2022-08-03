@@ -4,7 +4,11 @@
 @{
     Layout = "~/Views/Shared/_AppLayout.cshtml";
 }
-
+<head>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/dist/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/reviews.css" rel="stylesheet"/>
+</head>
 
 <div id="root">
 
@@ -15,10 +19,13 @@
 
 @*Components*@
 <script type="module" src="@Url.Content("~/js/react/reviews/components/Button.jsx")"></script>
-
+<script type="module" src="@Url.Content("~/js/react/reviews/components/Card.jsx")"></script>
 
 @*Pages*@
 <script type="module" src="@Url.Content("~/js/react/reviews/pages/Main.jsx")"></script>
 
 
 <script type="module" src="@Url.Content("~/js/react/reviews/index.jsx")"></script>
+
+@*Bootstrap*@
+<script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
