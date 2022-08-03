@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\js\react\statistics\components\" />
     <Folder Include="wwwroot\js\react\statistics\pages\" />
-    <Folder Include="wwwroot\js\react\reviews\pages\" />
   </ItemGroup>
 
 </Project>

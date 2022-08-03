@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PkjX2TvCghQzclo4m36B68/rS71E4fVanLgefJ6HQmQ=",
+  "Hash": "jIEvmHu3QIkIfaHn8rhnEGSAsRs1fNScjRBs7u4uWEY=",
   "Source": "EQtrack",
   "BasePath": "_content/EQtrack",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\react\\reviews\\index.jsx"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\react\\reviews\\pages\\Main.jsx",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "js/react/reviews/pages/Main.jsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\react\\reviews\\pages\\Main.jsx"
     },
     {
       "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\react\\statistics\\index.jsx",

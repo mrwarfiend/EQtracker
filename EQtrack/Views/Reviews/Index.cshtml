@@ -12,4 +12,13 @@
 
 <script src="~/lib/react/build/react.min.js"></script>
 <script src="~/lib//react/build/react-dom.min.js"></script>
-<script src="@Url.Content("~/js/react/reviews/index.jsx")"></script>
+
+@*Components*@
+<script type="module" src="@Url.Content("~/js/react/reviews/components/Button.jsx")"></script>
+
+
+@*Pages*@
+<script type="module" src="@Url.Content("~/js/react/reviews/pages/Main.jsx")"></script>
+
+
+<script type="module" src="@Url.Content("~/js/react/reviews/index.jsx")"></script>
