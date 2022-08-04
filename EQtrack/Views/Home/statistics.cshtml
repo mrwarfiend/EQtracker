@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<head>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/dist/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/statistics.css" rel="stylesheet"/>
+</head>
+
+<div id="root">
+
+</div>
+
+<script src="~/lib/react/build/react.min.js"></script>
+<script src="~/lib//react/build/react-dom.min.js"></script>
+
+@*Components*@
+<script type="module" src="@Url.Content("~/js/react/statistics/components/Button.jsx")"></script>
+<script type="module" src="@Url.Content("~/js/react/statistics/components/Card.jsx")"></script>
+
+@*Pages*@
+<script type="module" src="@Url.Content("~/js/react/statistics/pages/Main.jsx")"></script>
+
+
+<script type="module" src="@Url.Content("~/js/react/statistics/index.jsx")"></script>
+
+@*Bootstrap*@
+<script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

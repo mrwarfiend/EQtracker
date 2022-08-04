@@ -29,5 +29,10 @@ namespace EQtrack.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult statistics()
+        {
+            return View();
+        }
     }
 }

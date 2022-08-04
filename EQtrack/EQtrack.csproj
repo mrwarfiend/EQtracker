@@ -21,9 +21,4 @@
     <PackageReference Include="React.Router" Version="5.2.12" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\js\react\statistics\components\" />
-    <Folder Include="wwwroot\js\react\statistics\pages\" />
-  </ItemGroup>
-
 </Project>
