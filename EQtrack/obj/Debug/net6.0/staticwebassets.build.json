@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "mP0mVbmOoQ0z4TJ5+7mGAEGAWxecLsgiRCYffXkyQbQ=",
+=======
+  "Hash": "gogTkIM+X9TJiu5F58LB4g9ZpZxJ1cxEsTdq9BjSrzE=",
+>>>>>>> 5e195606653fb13d909947375296e82b7f9c3875
   "Source": "EQtrack",
   "BasePath": "_content/EQtrack",
   "Mode": "Default",
@@ -1105,7 +1109,28 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\css\\style.css",
+=======
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\css\\statistics.css",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "css/statistics.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\statistics.css"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\css\\style.css",
+>>>>>>> 5e195606653fb13d909947375296e82b7f9c3875
       "SourceId": "EQtrack",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
@@ -1207,7 +1232,79 @@
       "OriginalItemSpec": "wwwroot\\images\\five-star.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\images\\mitsubishi.png",
+=======
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\images\\mitsubishi.png",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/mitsubishi.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\mitsubishi.png"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\images\\nuon.png",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/nuon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\nuon.png"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\images\\nuonlogo.gif",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/nuonlogo.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\nuonlogo.gif"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\images\\stats.png",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/stats.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\stats.png"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\main.js",
+>>>>>>> 5e195606653fb13d909947375296e82b7f9c3875
       "SourceId": "EQtrack",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
@@ -1343,7 +1440,45 @@
       "OriginalItemSpec": "wwwroot\\js\\react\\reviews\\pages\\Main.jsx"
     },
     {
+<<<<<<< HEAD
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\js\\react\\statistics\\index.jsx",
+=======
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\react\\statistics\\components\\Button.jsx",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "js/react/statistics/components/Button.jsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\react\\statistics\\components\\Button.jsx"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\react\\statistics\\components\\Card.jsx",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "js/react/statistics/components/Card.jsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\react\\statistics\\components\\Card.jsx"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\react\\statistics\\index.jsx",
+>>>>>>> 5e195606653fb13d909947375296e82b7f9c3875
       "SourceId": "EQtrack",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
@@ -1360,7 +1495,28 @@
       "OriginalItemSpec": "wwwroot\\js\\react\\statistics\\index.jsx"
     },
     {
+<<<<<<< HEAD
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\js\\site.js",
+=======
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\react\\statistics\\pages\\Main.jsx",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "js/react/statistics/pages/Main.jsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\react\\statistics\\pages\\Main.jsx"
+    },
+    {
+      "Identity": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\wwwroot\\js\\site.js",
+>>>>>>> 5e195606653fb13d909947375296e82b7f9c3875
       "SourceId": "EQtrack",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
