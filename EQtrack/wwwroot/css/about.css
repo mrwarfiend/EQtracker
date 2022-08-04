@@ -1,1 +1,13 @@
-﻿
+﻿.back {
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px black;
+    padding: 75px 75px;
+}
+
+img {
+    height: 200px;
+}
+
+.marg {
+    margin-top: 100px;
+}
