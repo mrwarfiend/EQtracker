@@ -34,5 +34,10 @@ namespace EQtrack.Controllers
         {
             return View();
         }
+
+        public IActionResult Services()
+        {
+            return View();
+        }
     }
 }
