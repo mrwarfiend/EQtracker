@@ -11,12 +11,17 @@ function Main() {
                 </div>
             </div>
             <div className="row">
-                <h3>We offer professional services for:</h3>
+                <h2>We offer professional services for:</h2>
+                <hr/>
                 <ul>
                     <li><h4>Complete tool catalogue for all corporate equipment</h4></li>
+                    <li><h4>&#8226;</h4></li>
                     <li><h4>Tool update management</h4></li>
+                    <li><h4>&#8226;</h4></li>
                     <li><h4>Complete start to finish updated tool condition monitoring and documentation</h4></li>
+                    <li><h4>&#8226;</h4></li>
                     <li><h4>Implemented tool repair request for documentation and tool repair monitoring</h4></li>
+                    <li><h4>&#8226;</h4></li>
                     <li><h4>A facilitated claims and insurance request portal for all broken or lost tools</h4></li>
                 </ul>
             </div>

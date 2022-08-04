@@ -16,9 +16,12 @@
     background-color: rgba(0,0,0,.6);
 }
 
-.row h3 {
+.row h2 {
     margin-top: 50px;
     margin-bottom: 25px;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px black;
+    color: gray;
 }
 
 .row ul {
