@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\inventoriesControllerOLD.cs" />
+    <Compile Remove="Controllers\ReturnTicketsControllerOLD.cs" />
+    <Compile Remove="Controllers\TicketsControllerOLD.cs" />
+    <Compile Remove="Controllers\toolsControllerOLD.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.19.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.19.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.V8.Native.win-x64" Version="3.18.4" />

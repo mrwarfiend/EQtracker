@@ -56,7 +56,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,TimeStamp,toolID,Condition,repairNeeded")] ReturnTicket returnTicket)
+        public async Task<IActionResult> Create([Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail")] ReturnTicket returnTicket)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,TimeStamp,toolID,Condition,repairNeeded")] ReturnTicket returnTicket)
+        public async Task<IActionResult> Edit(int id, [Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail")] ReturnTicket returnTicket)
         {
             if (id != returnTicket.id)
             {

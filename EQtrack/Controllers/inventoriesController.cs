@@ -56,7 +56,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,toolID,count")] inventory inventory)
+        public async Task<IActionResult> Create([Bind("id,name,toolID,Count,flag")] inventory inventory)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,toolID,count")] inventory inventory)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,toolID,Count,flag")] inventory inventory)
         {
             if (id != inventory.id)
             {
@@ -163,5 +163,21 @@ namespace EQtrack.Controllers
         {
           return (_context.Inventories?.Any(e => e.id == id)).GetValueOrDefault();
         }
+
+        public JsonResult FetchCount(int cid)
+        {
+
+            //var count = _context.inventory.Where(e => e.categID == cid).Count();
+            //var count = _context.Inventories.Where(_context => _context.Id == cid).Count();
+            //var count = _context.Inventories?.Count;
+            var count = 10;
+            //Include(p => p.categ).Where(p => p.categID == id)
+            //var count = _context.Inventories?.Where(p => p.id == cid)                .Select(inventory.Count);
+            //  var count = new select _context.Inventories
+            //Console.WriteLine("Count is " + Count);
+           return Json(count);
+
+        }
+
     }
 }

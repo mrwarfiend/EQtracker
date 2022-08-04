@@ -21,9 +21,8 @@ namespace EQtrack.Controllers
         // GET: Tickets
         public async Task<IActionResult> Index()
         {
-              return _context.Tickets != null ? 
-                          View(await _context.Tickets.ToListAsync()) :
-                          Problem("Entity set 'ModelsContext.Tickets'  is null.");
+            var modelsContext = _context.Tickets.Include(t => t.Tool);
+            return View(await modelsContext.ToListAsync());
         }
 
         // GET: Tickets/Details/5
@@ -35,6 +34,7 @@ namespace EQtrack.Controllers
             }
 
             var ticket = await _context.Tickets
+                .Include(t => t.Tool)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {
@@ -47,6 +47,7 @@ namespace EQtrack.Controllers
         // GET: Tickets/Create
         public IActionResult Create()
         {
+            ViewData["toolID"] = new SelectList(_context.Tools, "id", "name");
             return View();
         }
 
@@ -55,7 +56,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TimeStamp")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,TimeStamp,toolID,userEmail")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +64,7 @@ namespace EQtrack.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["toolID"] = new SelectList(_context.Tools, "id", "name", ticket.toolID);
             return View(ticket);
         }
 
@@ -79,6 +81,7 @@ namespace EQtrack.Controllers
             {
                 return NotFound();
             }
+            ViewData["toolID"] = new SelectList(_context.Tools, "id", "name", ticket.toolID);
             return View(ticket);
         }
 
@@ -87,7 +90,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TimeStamp")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TimeStamp,toolID,userEmail")] Ticket ticket)
         {
             if (id != ticket.Id)
             {
@@ -114,6 +117,7 @@ namespace EQtrack.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["toolID"] = new SelectList(_context.Tools, "id", "name", ticket.toolID);
             return View(ticket);
         }
 
@@ -126,6 +130,7 @@ namespace EQtrack.Controllers
             }
 
             var ticket = await _context.Tickets
+                .Include(t => t.Tool)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {

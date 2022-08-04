@@ -20,7 +20,9 @@ namespace EQtrack.Models
         [Display(Name = "Tools")]
         public tool? Tool { get; set; }
 
-        public int count { get; set; }
+        // int.MaxValue
+        [Range(0, 10, ErrorMessage = "Please enter a value at least as big as {1}"), Required]
+        public int Count { get; set; }
         public bool flag { get; set; }
 
         //move flag form tools to inventory
