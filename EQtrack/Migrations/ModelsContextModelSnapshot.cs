@@ -50,7 +50,7 @@ namespace EQtrack.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int>("count")
+                    b.Property<int>("Count")
                         .HasColumnType("int");
 
                     b.Property<bool>("flag")
@@ -134,13 +134,14 @@ namespace EQtrack.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int>("categID")
+                    b.Property<int?>("categID")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("desc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("flag")
+                    b.Property<bool?>("flag")
                         .HasColumnType("bit");
 
                     b.Property<string>("image")

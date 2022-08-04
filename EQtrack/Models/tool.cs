@@ -18,12 +18,12 @@ namespace EQtrack.Models
 
 
         [Display(Name = "Category Name"), ForeignKey("Categ"), Required]
-        public int categID { get; set; }
+        public int? categID { get; set; }
         public Category? Categ { get; set; }
 
 
         //this may go unused
-        public bool flag { get; set; }
+        public bool? flag { get; set; }
 
         [Display(Name = "Description")]
         public string? desc { get; set; }
