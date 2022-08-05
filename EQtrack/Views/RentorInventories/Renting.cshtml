@@ -1,0 +1,78 @@
+﻿@model IEnumerable<EQtrack.Models.inventory>
+
+@{
+    ViewData["Title"] = "Renting";
+}
+
+<h1>Renting</h1>
+<!--
+<form asp-controller="Cart" method="post" asp-action="ShoppingSearch">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <div class="row-cols-3">
+            <div class="col-3">
+                <label asp-for="First().categId" class="control-label"></label>
+                <select asp-for="First().categId" class ="form-control" asp-items="ViewBag.categ"></select>
+            </div>
+            <br />
+            <div class="col-3">
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+</form>-->
+<!--<a asp-action="Renting" asp-controller="RentorInventory">Clear</a>-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tool.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tool.desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tool.image)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                   @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                   @Html.DisplayFor(modelItem => item.Tool.name)
+                </td>
+                <td>
+                   @Html.DisplayFor(modelItem => item.Tool.desc)
+                </td>
+                <td>
+                   @Html.DisplayFor(modelItem => item.Count)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.flag)
+                </td>
+                <td>
+                    <img width="50" height="50" src="@item.Tool.image.ToString()" alt="pic" asp-append-version="true"/>
+                </td>
+                <td>
+                    <!--<a asp-action="AddToCart" asp-route-id="@item.id">Add To Cart</a> |-->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

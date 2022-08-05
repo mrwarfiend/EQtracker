@@ -60,6 +60,8 @@ namespace EQtrack.Controllers
         {
             if (ModelState.IsValid)
             {
+                //added, need to test, also add to other creates.
+                ticket.TimeStamp = DateTime.Now;
                 _context.Add(ticket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -101,6 +103,7 @@ namespace EQtrack.Controllers
             {
                 try
                 {
+                    ticket.TimeStamp = DateTime.Now;
                     _context.Update(ticket);
                     await _context.SaveChangesAsync();
                 }

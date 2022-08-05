@@ -21,7 +21,7 @@ namespace EQtrack.Models
         public tool? Tool { get; set; }
 
         // int.MaxValue
-        [Range(0, 10, ErrorMessage = "Please enter a value at least as big as {1}"), Required]
+        [Range(0, 10, ErrorMessage = "Please enter a value at least as big as 1 to 10 for  {1}"), Required]
         public int Count { get; set; }
         public bool flag { get; set; }
 
