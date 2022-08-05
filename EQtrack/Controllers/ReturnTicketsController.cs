@@ -60,6 +60,7 @@ namespace EQtrack.Controllers
         {
             if (ModelState.IsValid)
             {
+                returnTicket.TimeStamp = DateTime.Now;
                 _context.Add(returnTicket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -101,6 +102,7 @@ namespace EQtrack.Controllers
             {
                 try
                 {
+                    returnTicket.TimeStamp = DateTime.Now;
                     _context.Update(returnTicket);
                     await _context.SaveChangesAsync();
                 }
