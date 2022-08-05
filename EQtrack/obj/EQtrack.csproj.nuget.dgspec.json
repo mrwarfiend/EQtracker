@@ -43,52 +43,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection": {
-              "target": "Package",
-              "version": "[3.19.0, )"
-            },
-            "JavaScriptEngineSwitcher.V8": {
-              "target": "Package",
-              "version": "[3.19.0, )"
-            },
-            "JavaScriptEngineSwitcher.V8.Native.win-x64": {
-              "target": "Package",
-              "version": "[3.18.4, )"
-            },
-            "JavaScriptEngineSwitcher.V8.Native.win-x86": {
-              "target": "Package",
-              "version": "[3.18.4, )"
-            },
-            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "React.AspNet": {
-              "target": "Package",
-              "version": "[5.2.12, )"
-            },
-            "React.Router": {
-              "target": "Package",
-              "version": "[5.2.12, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -99,14 +53,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
