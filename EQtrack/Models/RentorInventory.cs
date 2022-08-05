@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace EQtrack.Models
 {
     public class RentorInventory
     {
         public int id { get; set; }
-        public string? userId { get; set; }
+        public string userId { get; set; }
         [ForeignKey("Tools")]
         public int toolId { get; set; }
         public tool? Tools { get; set; }

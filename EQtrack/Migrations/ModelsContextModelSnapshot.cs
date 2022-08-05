@@ -17,7 +17,7 @@ namespace EQtrack.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.6")
+                .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -68,6 +68,36 @@ namespace EQtrack.Migrations
                     b.HasIndex("toolID");
 
                     b.ToTable("Inventories");
+                });
+
+            modelBuilder.Entity("EQtrack.Models.RentorInventory", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<bool>("check")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("timeStamp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("toolId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("toolId");
+
+                    b.ToTable("RentorInventories");
                 });
 
             modelBuilder.Entity("EQtrack.Models.ReturnTicket", b =>
@@ -167,6 +197,17 @@ namespace EQtrack.Migrations
                         .IsRequired();
 
                     b.Navigation("Tool");
+                });
+
+            modelBuilder.Entity("EQtrack.Models.RentorInventory", b =>
+                {
+                    b.HasOne("EQtrack.Models.tool", "Tools")
+                        .WithMany()
+                        .HasForeignKey("toolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tools");
                 });
 
             modelBuilder.Entity("EQtrack.Models.ReturnTicket", b =>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fRrhr0A6qanQqGHNQtvT7KfD4wMXXSlearNjLFtfrI0=",
+  "Hash": "feYPSRBZb0+9DigW60tme5lWcun0gkrgM9z+6GIBSYg=",
   "Source": "EQtrack",
   "BasePath": "_content/EQtrack",
   "Mode": "Default",
@@ -1275,6 +1275,23 @@
       "OriginalItemSpec": "wwwroot\\images\\Cloudera.jpg"
     },
     {
+      "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\images\\CRT400.jpg",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/CRT400.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\CRT400.jpg"
+    },
+    {
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\images\\five-star.png",
       "SourceId": "EQtrack",
       "SourceType": "Discovered",
@@ -1545,6 +1562,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\tools.jpg"
+    },
+    {
+      "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\images\\windowsvisual.png",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/windowsvisual.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\windowsvisual.png"
     },
     {
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\js\\main.js",
