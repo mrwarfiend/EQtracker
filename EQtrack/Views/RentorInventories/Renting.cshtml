@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EQtrack.Models.tool>
+﻿@model IEnumerable<EQtrack.Models.inventory>
 
 @{
     ViewData["Title"] = "Renting";
@@ -29,19 +29,19 @@
                 @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.desc)
+                @Html.DisplayNameFor(model => model.Tool.name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Categ)
+                @Html.DisplayNameFor(model => model.Tool.desc)
             </th>
             <th>
-                
+                @Html.DisplayNameFor(model => model.Count)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.flag)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.image)
+                @Html.DisplayNameFor(model => model.Tool.image)
             </th>
             <th></th>
         </tr>
@@ -52,22 +52,22 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.name)
+                   @Html.DisplayFor(modelItem => item.name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.desc)
+                   @Html.DisplayFor(modelItem => item.Tool.name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Categ.name)
+                   @Html.DisplayFor(modelItem => item.Tool.desc)
                 </td>
                 <td>
-                    
+                   @Html.DisplayFor(modelItem => item.Count)
                 </td>
                 <td>
-                    
+                    @Html.DisplayFor(model => item.flag)
                 </td>
                 <td>
-                    <img width="50" height="50" src="@item.image.ToString()" alt="pic" asp-append-version="true"/>
+                    <img width="50" height="50" src="@item.Tool.image.ToString()" alt="pic" asp-append-version="true"/>
                 </td>
                 <td>
                     <!--<a asp-action="AddToCart" asp-route-id="@item.id">Add To Cart</a> |-->

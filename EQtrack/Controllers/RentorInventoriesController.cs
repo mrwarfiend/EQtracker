@@ -58,14 +58,16 @@ namespace EQtrack.Controllers
         //Shopping -> renting
         public async Task<IActionResult> Renting()
         {
-            List<tool> prods = new List<tool>();
-            foreach (tool prod in _context.Tools.Include(e => e.Categ).ToList())
+            //List<tool> prods = new List<tool>();
+            List<inventory> prods = new List<inventory>();
+            foreach (inventory prod in _context.Inventories.Include(e => e.Tool).ToList())
             {
-                foreach (inventory inv in _context.Inventories.ToList())
+                foreach (tool inv in _context.Tools.ToList())
                 {
-                    if (prod.id == inv.toolID)
+                    //prod is inventory , inv is tools
+                    if (prod.Tool.id == inv.id)
                     {
-                        if (inv.Count > 0)
+                        if (prod.Count > 0)
                         {
                             prods.Add(prod);
                         }
@@ -73,7 +75,7 @@ namespace EQtrack.Controllers
                     }
                 }
             }
-            ViewBag.categ = new SelectList(_context.Tools.ToList(), "id", "name");
+            ViewBag.categ = new SelectList(_context.Inventories.ToList(), "id", "name");
             return View(prods);
         }
 
