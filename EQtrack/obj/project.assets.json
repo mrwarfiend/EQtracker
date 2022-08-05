@@ -1,9 +1,6 @@
 {
   "version": 3,
   "targets": {
-<<<<<<< HEAD
-    "net6.0": {}
-=======
     "net6.0": {
       "AdvancedStringBuilder/0.1.0": {
         "type": "package",
@@ -10572,13 +10569,8 @@
         "system.xml.xdocument.nuspec"
       ]
     }
->>>>>>> 0bd9c16828b9970be372d4ff25c5cd5402af4b65
   },
-  "libraries": {},
   "projectFileDependencyGroups": {
-<<<<<<< HEAD
-    "net6.0": []
-=======
     "net6.0": [
       "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection >= 3.19.0",
       "JavaScriptEngineSwitcher.V8 >= 3.19.0",
@@ -10593,26 +10585,25 @@
       "React.AspNet >= 5.2.12",
       "React.Router >= 5.2.12"
     ]
->>>>>>> 0bd9c16828b9970be372d4ff25c5cd5402af4b65
   },
   "packageFolders": {
-    "C:\\Users\\Valued Customer\\.nuget\\packages\\": {},
+    "C:\\Users\\Isaac\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\EQtrack.csproj",
+      "projectUniqueName": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\EQtrack.csproj",
       "projectName": "EQtrack",
-      "projectPath": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\EQtrack.csproj",
-      "packagesPath": "C:\\Users\\Valued Customer\\.nuget\\packages\\",
-      "outputPath": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\obj\\",
+      "projectPath": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\EQtrack.csproj",
+      "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
+      "outputPath": "C:\\GenSpark\\Learning\\Projects\\TigerTeam\\EQtrack\\EQtrack-Fixed\\EQtrack\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Valued Customer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10638,8 +10629,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-<<<<<<< HEAD
-=======
         "dependencies": {
           "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection": {
             "target": "Package",
@@ -10692,7 +10681,6 @@
             "version": "[5.2.12, )"
           }
         },
->>>>>>> 0bd9c16828b9970be372d4ff25c5cd5402af4b65
         "imports": [
           "net461",
           "net462",
@@ -10703,9 +10691,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
-=======
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -10714,8 +10699,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
->>>>>>> 0bd9c16828b9970be372d4ff25c5cd5402af4b65
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
