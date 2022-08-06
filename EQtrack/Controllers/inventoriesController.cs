@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EQtrack.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EQtrack.Controllers
 {
+    [Authorize]
     public class inventoriesController : Controller
     {
         private readonly ModelsContext _context;
@@ -46,6 +48,8 @@ namespace EQtrack.Controllers
                 return NotFound();
             }
             ViewData["toolID"] = new SelectList(_context.Tools, "id", "name", inventory.toolID);
+            tool t = _context.Tools.Find(inventory.toolID);
+            ViewData["tool"] = t.name;
             return View(inventory);
         }
 
