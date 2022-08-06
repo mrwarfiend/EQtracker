@@ -13,9 +13,12 @@ namespace EQtrack.Controllers
     {
         private readonly ModelsContext _context;
 
-        public inventoriesController(ModelsContext context)
+        private readonly IHttpContextAccessor _contextAccessor;
+
+        public inventoriesController(ModelsContext context, IHttpContextAccessor contextAccessor)
         {
             _context = context;
+            _contextAccessor = contextAccessor;
         }
 
         // GET: inventories
@@ -23,6 +26,60 @@ namespace EQtrack.Controllers
         {
             var modelsContext = _context.Inventories.Include(i => i.Tool);
             return View(await modelsContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> Checkout()
+        {
+            var modelsContext = _context.Inventories.Include(i => i.Tool);
+            return View(await modelsContext.ToListAsync());
+        }
+        public async Task<IActionResult> CheckoutFunc(int? id)
+        {
+            if (id == null || _context.Inventories == null)
+            {
+                return NotFound();
+            }
+
+            var inventory = await _context.Inventories.FindAsync(id);
+            if (inventory == null)
+            {
+                return NotFound();
+            }
+            ViewData["toolID"] = new SelectList(_context.Tools, "id", "name", inventory.toolID);
+            return View(inventory);
+        }
+
+        public IActionResult CheckoutFunction(inventory prod)
+        {
+                Console.WriteLine(prod.Count);
+            if (prod.Count > 0)
+            {
+
+                Ticket ticket = new Ticket();
+                ticket.toolID = prod.toolID;
+                ticket.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
+                ticket.TimeStamp = DateTime.Now;
+                _context.Tickets.Add(ticket);
+                _context.SaveChanges();
+
+                RentorInventory ri = new RentorInventory();
+                ri.userId = _contextAccessor.HttpContext.User.Identity.Name;
+                ri.toolId = prod.toolID;
+                ri.count = 1;
+                ri.timeStamp = DateTime.Now;
+                ri.check = false;
+                _context.RentorInventories.Add(ri);
+                _context.SaveChanges();
+
+                prod.Count--;
+                _context.Update(prod);
+                _context.SaveChanges();
+
+            }
+
+
+            var modelsContext = _context.Inventories.Include(i => i.Tool);
+            return RedirectToAction("Checkout");
         }
 
         // GET: inventories/Details/5
@@ -154,14 +211,14 @@ namespace EQtrack.Controllers
             {
                 _context.Inventories.Remove(inventory);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool inventoryExists(int id)
         {
-          return (_context.Inventories?.Any(e => e.id == id)).GetValueOrDefault();
+            return (_context.Inventories?.Any(e => e.id == id)).GetValueOrDefault();
         }
 
         public JsonResult FetchCount(int cid)
@@ -175,7 +232,7 @@ namespace EQtrack.Controllers
             //var count = _context.Inventories?.Where(p => p.id == cid)                .Select(inventory.Count);
             //  var count = new select _context.Inventories
             //Console.WriteLine("Count is " + Count);
-           return Json(count);
+            return Json(count);
 
         }
 

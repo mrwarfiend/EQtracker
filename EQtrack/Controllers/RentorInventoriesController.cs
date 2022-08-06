@@ -28,7 +28,7 @@ namespace EQtrack.Controllers
         //public async Task<IActionResult> Index()
         public IActionResult Index()
         {
-            
+
             ViewBag.quantity = 0;
             List<RentorInventory> list = new List<RentorInventory>();
             foreach (RentorInventory C in _context.RentorInventories.Include(e => e.Tools).ToList())
@@ -43,7 +43,7 @@ namespace EQtrack.Controllers
                     ViewBag.quantity += C.count;
                 }
             }
-            
+
             return View(list);
 
             /*
@@ -52,6 +52,64 @@ namespace EQtrack.Controllers
             */
 
 
+        }
+
+        public async Task<IActionResult> Return(int? id)
+        {
+            if (id == null || _context.RentorInventories == null)
+            {
+                return NotFound();
+            }
+
+            var rentorInventory = await _context.RentorInventories.FindAsync(id);
+            if (rentorInventory == null)
+            {
+                return NotFound();
+            }
+            ViewData["toolId"] = new SelectList(_context.Tools, "id", "name");
+            tool t = await _context.Tools.FindAsync(rentorInventory.toolId);
+            ViewData["tool"] = t.name;
+            return View(rentorInventory);
+        }
+
+        public IActionResult ReturnFunc(RentorInventory ri)
+        {
+            ReturnTicket rt = new ReturnTicket();
+            rt.TimeStamp = DateTime.Now;
+            rt.toolID = ri.toolId;
+            switch (ri.check)
+            {
+                case true:
+                    rt.Condition = "Bad";
+                    break;
+                case false:
+                    rt.Condition = "Good";
+                    break;
+                default:
+                    rt.Condition = "Good";
+                    break;
+            }
+            rt.repairNeeded = ri.check;
+            rt.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
+            _context.Returns.Add(rt);
+            _context.SaveChanges();
+
+            if (ri.check)
+            {
+
+            }
+            else
+            {
+                inventory inv = _context.Inventories.Where(e => e.toolID == ri.toolId).First();
+                inv.Count++;
+                _context.Inventories.Update(inv);
+                _context.SaveChanges();
+            }
+
+
+            _context.RentorInventories.Remove(ri);
+            _context.SaveChanges();
+            return RedirectToAction("index");
         }
 
         //products to 
@@ -241,7 +299,7 @@ namespace EQtrack.Controllers
             {
                 _context.RentorInventories.Remove(rentorInventory);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -279,7 +337,7 @@ namespace EQtrack.Controllers
         */
         private bool RentorInventoryExists(int id)
         {
-          return (_context.RentorInventories?.Any(e => e.id == id)).GetValueOrDefault();
+            return (_context.RentorInventories?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }

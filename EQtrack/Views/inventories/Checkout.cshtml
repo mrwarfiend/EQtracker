@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EQtrack.Models.inventory>
+
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h1>Checkout</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tool)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.flag)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tool.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.flag)
+            </td>
+            <td>
+                <a style="color: mediumblue" asp-action="CheckoutFunc" asp-route-id="@item.id">Checkout</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
 }
 
 <h1>Index</h1>
@@ -35,7 +36,7 @@
     </tr>
 </table>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-controller="Inventories" asp-action="Checkout">Checkout More</a>
 </p>
 <table class="table">
     <thead>
@@ -77,9 +78,7 @@
                 @Html.DisplayFor(modelItem => item.check)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <a style="color: mediumblue" asp-action="Return" asp-route-id="@item.id">Return</a> 
             </td>
         </tr>
 }
