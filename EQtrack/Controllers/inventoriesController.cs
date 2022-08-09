@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace EQtrack.Controllers
 {
     [Authorize]
+    //[Authorize(Roles = "admin")]
     public class inventoriesController : Controller
     {
         private readonly ModelsContext _context;
@@ -30,11 +31,14 @@ namespace EQtrack.Controllers
             return View(await modelsContext.ToListAsync());
         }
 
+        //
         public async Task<IActionResult> Checkout()
         {
             var modelsContext = _context.Inventories.Include(i => i.Tool);
             return View(await modelsContext.ToListAsync());
         }
+
+        //
         public async Task<IActionResult> CheckoutFunc(int? id)
         {
             if (id == null || _context.Inventories == null)
@@ -55,7 +59,7 @@ namespace EQtrack.Controllers
 
         public IActionResult CheckoutFunction(inventory prod)
         {
-                Console.WriteLine(prod.Count);
+            Console.WriteLine("count for product before checkout is " +prod.Count +" \n");
             if (prod.Count > 0)
             {
 
@@ -87,6 +91,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: inventories/Details/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Inventories == null)
@@ -106,6 +111,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: inventories/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             ViewData["toolID"] = new SelectList(_context.Tools, "id", "name");
@@ -117,6 +123,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([Bind("id,name,toolID,Count,flag")] inventory inventory)
         {
             if (ModelState.IsValid)
@@ -130,6 +137,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: inventories/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Inventories == null)
@@ -151,6 +159,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("id,name,toolID,Count,flag")] inventory inventory)
         {
             if (id != inventory.id)
@@ -183,6 +192,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: inventories/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Inventories == null)
@@ -204,6 +214,7 @@ namespace EQtrack.Controllers
         // POST: inventories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Inventories == null)

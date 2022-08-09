@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jDIbeMhi/rvLqd7hWfRDDgQFrG8klVpWlJHjh48F+8M=",
+  "Hash": "0fx2cxaIoTQf3IxZIj4KteAVGeXeyso2K/jtNZ8YC4c=",
   "Source": "EQtrack",
   "BasePath": "_content/EQtrack",
   "Mode": "Default",
@@ -1732,6 +1732,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\tools\\lenovo-data-center-servers-tower-thinksystem-st650-v2-subseries-hero.webp"
+    },
+    {
+      "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\images\\tools\\modem.jpg",
+      "SourceId": "EQtrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\",
+      "BasePath": "_content/EQtrack",
+      "RelativePath": "images/tools/modem.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\tools\\modem.jpg"
     },
     {
       "Identity": "D:\\visual projects\\source\\repos\\proj1 third time\\EQtrack\\wwwroot\\images\\tools\\Visual_Studio_Code_1.35_icon.svg.png",

@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EQtrack.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EQtrack.Controllers
 {
+
+    [Authorize(Roles = "admin")]
     public class CategoriesController : Controller
     {
         private readonly ModelsContext _context;

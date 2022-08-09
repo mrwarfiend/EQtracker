@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EQtrack.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EQtrack.Controllers
 {
+    [Authorize]
     public class ReturnTicketsController : Controller
     {
         private readonly ModelsContext _context;
@@ -45,6 +47,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: ReturnTickets/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             ViewData["toolID"] = new SelectList(_context.Tools, "id", "name");
@@ -56,6 +59,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail")] ReturnTicket returnTicket)
         {
             if (ModelState.IsValid)
@@ -70,6 +74,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: ReturnTickets/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Returns == null)
@@ -91,6 +96,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail")] ReturnTicket returnTicket)
         {
             if (id != returnTicket.id)
@@ -124,6 +130,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: ReturnTickets/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Returns == null)
@@ -145,6 +152,7 @@ namespace EQtrack.Controllers
         // POST: ReturnTickets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Returns == null)

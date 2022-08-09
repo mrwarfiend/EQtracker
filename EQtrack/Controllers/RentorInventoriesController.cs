@@ -8,9 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Authorization;
 using EQtrack.Models;
+//using Microsoft.AspNetCore.Authorization;
 
 namespace EQtrack.Controllers
 {
+
+    [Authorize]
     public class RentorInventoriesController : Controller
     {
         private readonly ModelsContext _context;
@@ -213,6 +216,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: RentorInventories/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.RentorInventories == null)
@@ -234,6 +238,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("id,userId,toolId,count,timeStamp,check")] RentorInventory rentorInventory)
         {
             if (id != rentorInventory.id)
@@ -267,6 +272,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: RentorInventories/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.RentorInventories == null)
@@ -288,6 +294,7 @@ namespace EQtrack.Controllers
         // POST: RentorInventories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.RentorInventories == null)
