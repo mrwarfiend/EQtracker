@@ -38,7 +38,7 @@
                 @Html.DisplayNameFor(model => model.Count)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.flag)
+               @* @Html.DisplayNameFor(model => model.flag)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tool.image)
@@ -64,7 +64,7 @@
                    @Html.DisplayFor(modelItem => item.Count)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => item.flag)
+                    @*@Html.DisplayFor(model => item.flag)*@
                 </td>
                 <td>
                     <img width="50" height="50" src="@item.Tool.image.ToString()" alt="pic" asp-append-version="true"/>
