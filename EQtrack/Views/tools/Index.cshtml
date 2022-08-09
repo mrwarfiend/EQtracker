@@ -9,6 +9,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<p>
+    <a asp-action="Upload">Upload Photo</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -46,7 +49,8 @@
                 @Html.DisplayFor(modelItem => item.desc)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.image)
+                 @*@Html.DisplayFor(modelItem => item.image) *@
+                <img width="50" height="50" src="/images/tools/@item.image" alt="pic" asp-append-version="true"/>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

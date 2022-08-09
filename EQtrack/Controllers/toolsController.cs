@@ -68,6 +68,11 @@ namespace EQtrack.Controllers
             return View(tool);
         }
 
+        public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+
         // GET: tools/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
