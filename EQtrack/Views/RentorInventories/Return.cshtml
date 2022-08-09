@@ -1,0 +1,69 @@
+﻿@model EQtrack.Models.RentorInventory
+
+@{
+    ViewData["Title"] = "Return";
+}
+
+<h1>Return</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tools.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewData["tool"]
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.count)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.count)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ReturnFunc" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            @Html.HiddenFor(model => model.userId)
+            @Html.HiddenFor(model => model.id)
+            @Html.HiddenFor(model => model.toolId)
+            @Html.HiddenFor(model => model.count)
+
+            <h4>Does this tool need repaired?</h4>
+            @Html.CheckBoxFor(e=>e.check)
+            <div class="form-group">
+                <input onclick="message()" type="submit" value="Checkout One" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+        <script>
+function message() {
+    if (document.getElementById("check").checked == false) {
+        alert("Return Successful!");
+
+    } else {
+        alert("Tool Sent to Claims!")
+    }
+}
+</script>

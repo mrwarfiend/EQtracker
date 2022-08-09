@@ -67,6 +67,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/inventories/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcaW52ZW50b3JpZXNcQ2hlY2tvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/inventories/CheckoutFunc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcaW52ZW50b3JpZXNcQ2hlY2tvdXRGdW5jLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/visual projects/source/repos/proj1 third time/EQtrack/Views/inventories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcaW52ZW50b3JpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +117,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/visual projects/source/repos/proj1 third time/EQtrack/Views/RentorInventories/Renting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudG9ySW52ZW50b3JpZXNcUmVudGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual projects/source/repos/proj1 third time/EQtrack/Views/RentorInventories/Return.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudG9ySW52ZW50b3JpZXNcUmV0dXJuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/visual projects/source/repos/proj1 third time/EQtrack/Views/ReturnTickets/Create.cshtml]
