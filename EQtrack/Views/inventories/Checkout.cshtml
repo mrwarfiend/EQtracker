@@ -22,6 +22,7 @@
             </th>
             <th>
                 @*@Html.DisplayNameFor(model => model.flag)*@
+               @Html.DisplayNameFor(model => model.Tool.image)
             </th>
             <th></th>
         </tr>
@@ -40,6 +41,7 @@
             </td>
             <td>
                @* @Html.DisplayFor(modelItem => item.flag)*@
+               <img width="50" height="50" src="/images/tools/@item.Tool.image" alt="pic" asp-append-version="true"/>
             </td>
             <td>
                 <a style="color: mediumblue" asp-action="CheckoutFunc" asp-route-id="@item.id">Checkout</a> 
