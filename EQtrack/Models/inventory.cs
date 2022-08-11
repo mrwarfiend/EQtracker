@@ -9,8 +9,9 @@ namespace EQtrack.Models
         //id, name, toolId(foreignkey), count
 
         public int id { get; set; }
+        
 
-        [Display(Name = "Inventory Name?"), Required]
+        [Display(Name = "Inventory"), Required]
         public string? name { get; set; }
 
 
@@ -21,8 +22,10 @@ namespace EQtrack.Models
         public tool? Tool { get; set; }
 
         // int.MaxValue
-        [Range(0, 10, ErrorMessage = "Please enter a value at least as big as 1 to 10 for  {1}"), Required]
+        //changed 8.11.2022
+        [Range(0, 1000, ErrorMessage = "Please enter a value at least as big as 1 to 1000 for  {1}"), Required]
         public int Count { get; set; }
+        //below isn't really used
         public bool flag { get; set; }
 
         //move flag form tools to inventory

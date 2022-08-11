@@ -12,6 +12,10 @@
     <Compile Remove="Controllers\ReturnTicketsControllerOLD.cs" />
     <Compile Remove="Controllers\TicketsControllerOLD.cs" />
     <Compile Remove="Controllers\toolsControllerOLD.cs" />
+    <Compile Remove="Migrations\removed\20220811165724_9.cs" />
+    <Compile Remove="Migrations\removed\20220811165724_9.Designer.cs" />
+    <Compile Remove="Migrations\removed\20220811173423_10.cs" />
+    <Compile Remove="Migrations\removed\20220811173423_10.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

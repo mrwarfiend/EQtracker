@@ -42,5 +42,11 @@ namespace EQtrack.Models
 
         public string? userEmail{ get; set; }
 
+        //Return to... Duh
+
+        //[ForeignKey("ReturnToInventory2")]
+        public int InventoryId2 { get; set; }
+        //public inventory? ReturnToInventory2 { get; set; }
+
     }
 }

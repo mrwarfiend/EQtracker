@@ -44,5 +44,12 @@ namespace EQtrack.Models
         //add varible for the person renting the ticket, as well as in the return ticket
         //user e-mail
         public string? userEmail { get; set; }
+
+
+        //Return to... Duh
+
+        //[ForeignKey("ReturnToInventory1")]
+        public int InventoryId1 { get; set; }
+        //public inventory? ReturnToInventory1 { get; set; }
     }
 }

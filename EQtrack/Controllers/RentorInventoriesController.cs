@@ -37,6 +37,7 @@ namespace EQtrack.Controllers
             foreach (RentorInventory C in _context.RentorInventories.Include(e => e.Tools).ToList())
             {
                 //prod to Tools
+                //parcess trhough users, and returns current users selection
                 if (C.userId == _contextAccessor.HttpContext.User.Identity.Name)
                 {
                     list.Add(C);
@@ -57,6 +58,7 @@ namespace EQtrack.Controllers
 
         }
 
+        //
         public async Task<IActionResult> Return(int? id)
         {
             if (id == null || _context.RentorInventories == null)
@@ -117,6 +119,7 @@ namespace EQtrack.Controllers
 
         //products to 
         //Shopping -> renting
+        //nether this nor the corrisponding views seems needed.
         public async Task<IActionResult> Renting()
         {
             //List<tool> prods = new List<tool>();
@@ -140,6 +143,7 @@ namespace EQtrack.Controllers
             return View(prods);
         }
 
+        //Listed as shoping search in renting views, both this and the function are not yet complete
         public async Task<IActionResult> RentingSearch(tool p)
         {
             List<tool> prods = new List<tool>();
