@@ -71,9 +71,14 @@ namespace EQtrack.Controllers
             {
                 return NotFound();
             }
+            //, rentorInventory.toolId
             ViewData["toolId"] = new SelectList(_context.Tools, "id", "name");
             tool t = await _context.Tools.FindAsync(rentorInventory.toolId);
             ViewData["tool"] = t.name;
+
+            Console.WriteLine("rentorInventory.toolId is " + rentorInventory.toolId + " \n");
+            Console.WriteLine("rentorInventory.InventoryId is " + rentorInventory.InventoryId + " \n");
+            //Ok, so these command lines get the right stuff. But in the next block everything goes to helll.
             return View(rentorInventory);
         }
 
@@ -82,6 +87,14 @@ namespace EQtrack.Controllers
             ReturnTicket rt = new ReturnTicket();
             rt.TimeStamp = DateTime.Now;
             rt.toolID = ri.toolId;
+            Console.WriteLine("Rt.toolID is " + rt.toolID + " \n");
+
+            rt.repairNeeded = ri.check;
+            //Adds return ticket.
+            rt.InventoryId2 = ri.InventoryId;
+            Console.WriteLine("ri.InventoryId is " + ri.InventoryId + " \n");
+            Console.WriteLine("rt.InventoryId2 is " + rt.InventoryId2 + " \n");
+
             switch (ri.check)
             {
                 case true:
@@ -94,10 +107,19 @@ namespace EQtrack.Controllers
                     rt.Condition = "Good";
                     break;
             }
-            rt.repairNeeded = ri.check;
+
+            if (ri.InventoryId == null) {
+                Console.WriteLine("ri.InventoryId is null" + " \n");
+
+            }
+            if (rt.InventoryId2== null)
+            {
+                Console.WriteLine("rt.InventoryId2 is null" + " \n");
+            }
+
             rt.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
-            //Adds return ticket.
-            rt.InventoryId2 = ri.InventoryId;
+
+            //Sends the ticket requrdless of repairs
             _context.Returns.Add(rt);
             _context.SaveChanges();
 
@@ -109,13 +131,40 @@ namespace EQtrack.Controllers
             }
             else
             {
-                if (ri.InventoryId==0|| ri.InventoryId == null) { 
-                
+                //var inventory = await _context.Inventories.FindAsync(id);
+
+                //too doo
+                bool checkInventoryExists = false;
+
+                //also added
+                //var checkInventory = await _context.Inventories.FindAsync(ri.InventoryId);
+                //Defaults to first match in case of  0 or null in the database which do not exist.
+                if (ri.InventoryId == 0 || ri.InventoryId == null)
+                {
+
+                    inventory inv = _context.Inventories.Where(e => e.toolID == ri.toolId).First();
+                    inv.Count++;
+                    _context.Inventories.Update(inv);
+                    _context.SaveChanges();
                 }
-                inventory inv = _context.Inventories.Where(e => e.toolID == ri.toolId).First();
-                inv.Count++;
-                _context.Inventories.Update(inv);
-                _context.SaveChanges();
+                else if(checkInventoryExists)
+                {
+                    //Will need to check if inventory exists.
+                    //_context.Inventories.Contains(ri.InventoryId
+                }
+                else { 
+                    //for anything else
+                    //inventory inv = _context.Inventories.Where(e => e.toolID == ri.toolId && e.id == ri.InventoryId).First();
+                    inventory inv = _context.Inventories.Where(e => e.id == ri.InventoryId).First();
+                    inv.Count++;
+                    _context.Inventories.Update(inv);
+                    _context.SaveChanges();
+                }
+
+                
+
+
+                
             }
 
 

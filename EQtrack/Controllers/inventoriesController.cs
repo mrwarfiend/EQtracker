@@ -36,6 +36,7 @@ namespace EQtrack.Controllers
         {
             var modelsContext = _context.Inventories.Include(i => i.Tool);
             return View(await modelsContext.ToListAsync());
+
         }
 
         //
@@ -67,15 +68,21 @@ namespace EQtrack.Controllers
                 ticket.toolID = prod.toolID;
                 ticket.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
                 ticket.TimeStamp = DateTime.Now;
+
+                //ticket
+                ticket.InventoryId1 = prod.id;
                 _context.Tickets.Add(ticket);
                 _context.SaveChanges();
 
+                ////
                 RentorInventory ri = new RentorInventory();
                 ri.userId = _contextAccessor.HttpContext.User.Identity.Name;
                 ri.toolId = prod.toolID;
                 ri.count = 1;
                 ri.timeStamp = DateTime.Now;
                 ri.check = false;
+                //Rentores inventory send
+                ri.InventoryId = prod.id;
                 _context.RentorInventories.Add(ri);
                 _context.SaveChanges();
 

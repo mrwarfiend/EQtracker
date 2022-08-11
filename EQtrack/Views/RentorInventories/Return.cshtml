@@ -39,7 +39,8 @@
             @Html.HiddenFor(model => model.id)
             @Html.HiddenFor(model => model.toolId)
             @Html.HiddenFor(model => model.count)
-
+            @Html.HiddenFor(model => model.InventoryId)
+            
             <h4>Does this tool need repaired?</h4>
             @Html.CheckBoxFor(e=>e.check)
             <div class="form-group">
