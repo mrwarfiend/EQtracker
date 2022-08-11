@@ -96,15 +96,22 @@ namespace EQtrack.Controllers
             }
             rt.repairNeeded = ri.check;
             rt.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
+            //Adds return ticket.
+            rt.InventoryId2 = ri.InventoryId;
             _context.Returns.Add(rt);
             _context.SaveChanges();
 
+
+            //This needs to be added to.
             if (ri.check)
             {
 
             }
             else
             {
+                if (ri.InventoryId==0|| ri.InventoryId == null) { 
+                
+                }
                 inventory inv = _context.Inventories.Where(e => e.toolID == ri.toolId).First();
                 inv.Count++;
                 _context.Inventories.Update(inv);

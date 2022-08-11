@@ -22,7 +22,7 @@ namespace EQtrack.Models
         public bool check { get; set; }
         //
         //[ForeignKey("ReturnToInventory")]
-        public int InventoryId { get; set; }
+        public int? InventoryId { get; set; }
         //public inventory? ReturnToInventory { get; set; }
 
     }

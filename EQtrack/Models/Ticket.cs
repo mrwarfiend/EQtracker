@@ -49,7 +49,7 @@ namespace EQtrack.Models
         //Return to... Duh
 
         //[ForeignKey("ReturnToInventory1")]
-        public int InventoryId1 { get; set; }
+        public int? InventoryId1 { get; set; }
         //public inventory? ReturnToInventory1 { get; set; }
     }
 }
