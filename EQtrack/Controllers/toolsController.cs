@@ -72,7 +72,10 @@ namespace EQtrack.Controllers
 
         public async Task<IActionResult> Upload()
         {
-            return View();
+            //effectivivly this just returns to index, and is just a place holder until or even if i get the upload to work
+            var modelsContext = _context.Tools.Include(t => t.Categ);
+            return View(await modelsContext.ToListAsync());
+            //return View();
         }
 
         // GET: tools/Edit/5

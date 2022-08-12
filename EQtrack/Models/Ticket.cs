@@ -30,12 +30,17 @@ namespace EQtrack.Models
 
         public int getCount(){
 
+            /*
             int toolId2 = toolID;
+            int? count = 0;
+            if (Tool.id != null) { 
+             count = Tool.id;
+            }
 
-            int? count = Tool.id;
             if( count == null){ count = 0; }
-
-        return (int)count;
+            */
+            int? count = 0;
+            return (int)count;
         }
 
 
