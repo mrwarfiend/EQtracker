@@ -73,7 +73,7 @@ namespace EQtrack.Controllers
             }
             //, rentorInventory.toolId
             ViewData["toolId"] = new SelectList(_context.Tools, "id", "name");
-            tool t = await _context.Tools.FindAsync(rentorInventory.toolId);
+            tool? t = await _context.Tools.FindAsync(rentorInventory.toolId);
             ViewData["tool"] = t.name;
 
             Console.WriteLine("rentorInventory.toolId is " + rentorInventory.toolId + " \n");
@@ -108,36 +108,46 @@ namespace EQtrack.Controllers
                     break;
             }
 
-            if (ri.InventoryId == null) {
-                Console.WriteLine("ri.InventoryId is null" + " \n");
-
-            }
-            if (rt.InventoryId2== null)
-            {
-                Console.WriteLine("rt.InventoryId2 is null" + " \n");
-            }
+            if (ri.InventoryId == null) {  Console.WriteLine("ri.InventoryId is null" + " \n");           }
+            if (rt.InventoryId2== null) {  Console.WriteLine("rt.InventoryId2 is null" + " \n");          }
 
             rt.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
 
-            //Sends the ticket requrdless of repairs
-            _context.Returns.Add(rt);
-            _context.SaveChanges();
+
+            bool sendReturnTicket = false;
+
 
 
             //This needs to be added to.
+            //Will send the item to claims for repair.
             if (ri.check)
             {
 
             }
             else
             {
-                //var inventory = await _context.Inventories.FindAsync(id);
+
 
                 //too doo
-                bool checkInventoryExists = false;
+                bool checkInventoryExists = true;
 
-                //also added
-                //var checkInventory = await _context.Inventories.FindAsync(ri.InventoryId);
+
+                if (ri.InventoryId != null) 
+                {
+                    //FindAsync not used                    
+                    int newInvId = (int)ri.InventoryId;
+                    inventory? checkInventory2 = _context.Inventories.Find(newInvId);
+                    if (checkInventory2 == null)
+                    { 
+
+                        checkInventoryExists = false;
+                        //return NotFound();
+
+                    }
+
+                }
+
+
                 //Defaults to first match in case of  0 or null in the database which do not exist.
                 if (ri.InventoryId == 0 || ri.InventoryId == null)
                 {
@@ -146,11 +156,13 @@ namespace EQtrack.Controllers
                     inv.Count++;
                     _context.Inventories.Update(inv);
                     _context.SaveChanges();
+                    sendReturnTicket = true;
                 }
-                else if(checkInventoryExists)
+                else if(checkInventoryExists == false)
                 {
-                    //Will need to check if inventory exists.
-                    //_context.Inventories.Contains(ri.InventoryId
+                    //Will need to check if inventoryId exists.
+                    sendReturnTicket = false;
+                    return RedirectToAction("index");
                 }
                 else { 
                     //for anything else
@@ -158,6 +170,14 @@ namespace EQtrack.Controllers
                     inventory inv = _context.Inventories.Where(e => e.id == ri.InventoryId).First();
                     inv.Count++;
                     _context.Inventories.Update(inv);
+                    _context.SaveChanges();
+                    sendReturnTicket = true;
+                }
+
+
+                if (sendReturnTicket == true) {
+                    //Now Sends the return on valud executions
+                    _context.Returns.Add(rt);
                     _context.SaveChanges();
                 }
 
@@ -172,6 +192,7 @@ namespace EQtrack.Controllers
             _context.SaveChanges();
             return RedirectToAction("index");
         }
+        /////////////////////////////////////////////////////
 
         //products to 
         //Shopping -> renting
