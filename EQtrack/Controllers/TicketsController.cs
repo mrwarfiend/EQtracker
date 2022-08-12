@@ -21,6 +21,7 @@ namespace EQtrack.Controllers
         }
 
         // GET: Tickets
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
             var modelsContext = _context.Tickets.Include(t => t.Tool);
@@ -60,7 +61,7 @@ namespace EQtrack.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Create([Bind("Id,TimeStamp,toolID,userEmail")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,TimeStamp,toolID,userEmail,InventoryId1")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +99,7 @@ namespace EQtrack.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TimeStamp,toolID,userEmail")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TimeStamp,toolID,userEmail,InventoryId1")] Ticket ticket)
         {
             if (id != ticket.Id)
             {

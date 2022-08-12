@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using EQtrack.Models;
 using Microsoft.AspNetCore.Authorization;
 
+//adding InventoryId2
 namespace EQtrack.Controllers
 {
     [Authorize]
@@ -21,8 +22,10 @@ namespace EQtrack.Controllers
         }
 
         // GET: ReturnTickets
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
+            //InventoryId2
             var modelsContext = _context.Returns.Include(r => r.Tool2);
             return View(await modelsContext.ToListAsync());
         }
@@ -60,7 +63,7 @@ namespace EQtrack.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Create([Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail")] ReturnTicket returnTicket)
+        public async Task<IActionResult> Create([Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail,InventoryId2")] ReturnTicket returnTicket)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +100,7 @@ namespace EQtrack.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail")] ReturnTicket returnTicket)
+        public async Task<IActionResult> Edit(int id, [Bind("id,TimeStamp,toolID,Condition,repairNeeded,userEmail,InventoryId2")] ReturnTicket returnTicket)
         {
             if (id != returnTicket.id)
             {

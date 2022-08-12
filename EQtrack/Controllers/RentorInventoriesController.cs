@@ -123,6 +123,7 @@ namespace EQtrack.Controllers
             if (ri.check)
             {
 
+                //sendReturnTicket = true
             }
             else
             {
@@ -283,7 +284,7 @@ namespace EQtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,userId,toolId,count,timeStamp,check")] RentorInventory rentorInventory)
+        public async Task<IActionResult> Create([Bind("id,userId,toolId,count,timeStamp,check,InventoryId")] RentorInventory rentorInventory)
         {
             if (ModelState.IsValid)
             {
@@ -320,7 +321,7 @@ namespace EQtrack.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("id,userId,toolId,count,timeStamp,check")] RentorInventory rentorInventory)
+        public async Task<IActionResult> Edit(int id, [Bind("id,userId,toolId,count,timeStamp,check,InventoryId")] RentorInventory rentorInventory)
         {
             if (id != rentorInventory.id)
             {
