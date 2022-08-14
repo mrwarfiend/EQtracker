@@ -17,6 +17,10 @@ namespace EQtrack.Models
         public DbSet<ReturnTicket> Returns { get; set; }
         public DbSet<RentorInventory> RentorInventories { get; set; }
 
+        public DbSet<DamagedItem> DamagedItems { get; set; }
+
+
+
 
 
     }

@@ -1,0 +1,76 @@
+﻿@model EQtrack.Models.DamagedItem
+
+@{
+    ViewData["Title"] = "Editing";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>DamagedItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="userId" class="control-label"></label>
+                <input asp-for="userId" class="form-control" />
+                <span asp-validation-for="userId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="toolId" class="control-label"></label>
+                <select asp-for="toolId" class="form-control" asp-items="ViewBag.toolId"></select>
+                <span asp-validation-for="toolId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="timeStamp" class="control-label"></label>
+                <input asp-for="timeStamp" class="form-control" />
+                <span asp-validation-for="timeStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Condition" class="control-label"></label>
+                <input asp-for="Condition" class="form-control" />
+                <span asp-validation-for="Condition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="repairNeeded" class="control-label"></label>
+                <input asp-for="repairNeeded" class="form-control" />
+                <span asp-validation-for="repairNeeded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryId" class="control-label"></label>
+                <select asp-for="InventoryId" class="form-control" asp-items="ViewBag.InventoryId"></select>
+                <span asp-validation-for="InventoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminId" class="control-label"></label>
+                <input asp-for="AdminId" class="form-control" />
+                <span asp-validation-for="AdminId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="timeStamp2" class="control-label"></label>
+                <input asp-for="timeStamp2" class="form-control" />
+                <span asp-validation-for="timeStamp2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

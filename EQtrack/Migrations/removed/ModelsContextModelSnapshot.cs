@@ -42,6 +42,51 @@ namespace EQtrack.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("EQtrack.Models.DamagedItem", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("AdminId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Condition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("InventoryId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("repairNeeded")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("timeStamp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("timeStamp2")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("toolId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("userId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("InventoryId");
+
+                    b.HasIndex("toolId");
+
+                    b.ToTable("DamagedItems");
+                });
+
             modelBuilder.Entity("EQtrack.Models.inventory", b =>
                 {
                     b.Property<int>("id")
@@ -195,6 +240,23 @@ namespace EQtrack.Migrations
                     b.HasIndex("categID");
 
                     b.ToTable("Tools");
+                });
+
+            modelBuilder.Entity("EQtrack.Models.DamagedItem", b =>
+                {
+                    b.HasOne("EQtrack.Models.inventory", "ReturnToInventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId");
+
+                    b.HasOne("EQtrack.Models.tool", "Tools")
+                        .WithMany()
+                        .HasForeignKey("toolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ReturnToInventory");
+
+                    b.Navigation("Tools");
                 });
 
             modelBuilder.Entity("EQtrack.Models.inventory", b =>

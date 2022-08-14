@@ -72,29 +72,30 @@ namespace EQtrack.Controllers
 
         }
 
-        //post
+        //Get Return page
         public async Task<IActionResult> Return(int? id)
         {
-            Console.WriteLine("id is " + id + " \n");
+            //Console.WriteLine("id is " + id + " \n");
             if (id == null || _context.RentorInventories == null)
             {
                 return NotFound();
             }
 
-            Console.WriteLine("this is line 1  " + " \n");
+            //Console.WriteLine("this is line 1  " + " \n");
 
             var rentorInventory = await _context.RentorInventories.FindAsync(id);
             //check if stuff exists
-            Console.WriteLine("this is line 2  " + " \n");
+            //Console.WriteLine("this is line 2  " + " \n");
 
             if (rentorInventory == null) { return NotFound(); }
-            Console.WriteLine("this is line 3  " + " \n");
+            //Console.WriteLine("this is line 3  " + " \n");
             //if (rentorInventory.Tools == null) { return NotFound(); }
-            Console.WriteLine("this is line 4  " + " \n");
+            //Console.WriteLine("this is line 4  " + " \n");
+
             //if (rentorInventory.Tools.name != null) { }
             //else            { return NotFound(); }
 
-            Console.WriteLine("this is line 5  "  + " \n");
+            //Console.WriteLine("this is line 5  "  + " \n");
             //, rentorInventory.toolId
             ViewData["toolId"] = new SelectList(_context.Tools, "id", "name");
             tool? t = await _context.Tools.FindAsync(rentorInventory.toolId);
@@ -116,8 +117,8 @@ namespace EQtrack.Controllers
             return NotFound();
         }
 
-            public IActionResult ReturnFunc(RentorInventory ri)
-            {
+        public IActionResult ReturnFunc(RentorInventory ri)
+        {
                 ReturnTicket rt = new ReturnTicket();
                 rt.TimeStamp = DateTime.Now;
                 rt.toolID = ri.toolId;
@@ -126,8 +127,8 @@ namespace EQtrack.Controllers
                 rt.repairNeeded = ri.check;
                 Console.WriteLine("rt.repairNeeded is   " + rt.repairNeeded + " \n");
 
-            //Adds return ticket.
-            rt.InventoryId2 = ri.InventoryId;
+                //Adds return ticket.
+                rt.InventoryId2 = ri.InventoryId;
                 Console.WriteLine("ri.InventoryId is " + ri.InventoryId + " \n");
                 Console.WriteLine("rt.InventoryId2 is " + rt.InventoryId2 + " \n");
 
@@ -146,26 +147,66 @@ namespace EQtrack.Controllers
                  Console.WriteLine("again ri.check is   " + ri.check + " \n");
  
                 if (ri.InventoryId == null) { Console.WriteLine("ri.InventoryId is null" + " \n"); }
-                if (rt.InventoryId2 == null) { Console.WriteLine("rt.InventoryId2 is null" + " \n"); }
+                if (rt.InventoryId2 == null){ Console.WriteLine("rt.InventoryId2 is null" + " \n"); }
 
                 rt.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
-
+                
 
                 bool sendReturnTicket = false;
 
 
 
-            //This needs to be added to.
-            //Will send the item to claims for repair.
-              Console.WriteLine("again gain, ri.check is   " + ri.check + " \n");
-              if (ri.check)
+                //This needs to be added to.
+                //Will send the item to claims for repair.
+                Console.WriteLine("again gain, ri.check is   " + ri.check + " \n");
+                if (ri.check)
                 {
-                //_context.Claims.Update(inv);
-                //_context.SaveChanges();
-                rt.repairNeeded = ri.check;
-                //sendReturnTicket = true;
-                _context.Returns.Add(rt);
-                _context.SaveChanges();
+
+                    /*
+                     bool checkInventoryExists = true;
+                    //checks for the inventoryId, wether it is valud or even exists.
+                    if (ri.InventoryId != null)
+                    {
+                    int newInvId = (int)ri.InventoryId;
+                    inventory? checkInventory2 = _context.Inventories.Find(newInvId);
+                    if (checkInventory2 == null) {checkInventoryExists = false;}
+
+                    }
+
+                    //If inventory does not exist, or never existed, return to rentorinventory index. 
+                    if (checkInventoryExists == false)
+                    {
+                    sendReturnTicket = false;
+                    return RedirectToAction("index");
+                    }
+                    */
+                    //You know what, allow the rentor to send items with non exist inventores is fine, lets
+                    //the admins figure out what to do with it their instead of having to searh through all the possible
+                    //rentor inventories instead.
+
+                    DamagedItem dt = new DamagedItem();
+                    //userid
+                    dt.userId = _contextAccessor.HttpContext.User.Identity.Name;
+                    dt.toolId = ri.toolId;
+                    dt.timeStamp = DateTime.Now;
+
+                    dt.Condition = "Bad";
+                    dt.repairNeeded = ri.check;
+                    dt.InventoryId = ri.InventoryId;
+                    dt.AdminId = "NONE";
+                    //dt.InventoryId;
+                    //dt.timeStamp = DateTime.Now;
+                    _context.DamagedItems.Add(dt);
+                    _context.SaveChanges();
+
+
+                    //_context.Claims.Update(inv);
+                    //_context.SaveChanges();
+                    rt.repairNeeded = ri.check;
+                    //sendReturnTicket = true;
+                    //return ticket.
+                    _context.Returns.Add(rt);
+                    _context.SaveChanges();
 
                 }
                 else
@@ -176,7 +217,7 @@ namespace EQtrack.Controllers
                     bool checkInventoryExists = true;
 
 
-                    if (ri.InventoryId != null)
+                    if (ri.InventoryId != null&& ri.InventoryId != 0)
                     {
                         //FindAsync not used                    
                         int newInvId = (int)ri.InventoryId;

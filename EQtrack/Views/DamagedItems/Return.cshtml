@@ -1,0 +1,90 @@
+﻿@model EQtrack.Models.DamagedItem
+
+@{
+    ViewData["Title"] = "Return";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h1>Return</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+        <dt class = "col-sm-2">
+                 @Html.DisplayNameFor(model => model.Tools.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewData["tool"]
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.timeStamp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.timeStamp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Condition)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Condition)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.repairNeeded)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.repairNeeded)
+        </dd>
+
+
+
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ReturnFunc" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            @Html.HiddenFor(model => model.userId)
+            @Html.HiddenFor(model => model.id)
+            @Html.HiddenFor(model => model.toolId)
+            @*@Html.HiddenFor(model => model.count)*@
+            @Html.HiddenFor(model => model.InventoryId)
+            @Html.HiddenFor(model => model.timeStamp)
+            @Html.HiddenFor(model => model.Condition)
+            @Html.HiddenFor(model => model.repairNeeded)
+            @Html.HiddenFor(model => model.AdminId)
+                    
+            @*<h4>Does this tool need repaired?</h4>*@
+            @*@Html.CheckBoxFor(e=>e.check)*@
+            <div class="form-group">
+                <input onclick="message()" type="submit" value="Return Repaired" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+function message() {
+    if (document.getElementById("check").checked == false) {
+        alert("Return Successful!");
+
+    } else {
+        alert("Tool Sent to Claims!")
+    }
+}
+</script>
