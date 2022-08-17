@@ -105,8 +105,8 @@ namespace EQtrack.Controllers
                 //return NotFound(); }
 
 
-                Console.WriteLine("rentorInventory.toolId is " + rentorInventory.toolId + " \n");
-                Console.WriteLine("rentorInventory.InventoryId is " + rentorInventory.InventoryId + " \n");
+                //Console.WriteLine("rentorInventory.toolId is " + rentorInventory.toolId + " \n");
+                //Console.WriteLine("rentorInventory.InventoryId is " + rentorInventory.InventoryId + " \n");
                 //Ok, so these command lines get the right stuff. But in the next block everything goes to helll.
                 if (t.name != null)
                 {
@@ -122,15 +122,15 @@ namespace EQtrack.Controllers
                 ReturnTicket rt = new ReturnTicket();
                 rt.TimeStamp = DateTime.Now;
                 rt.toolID = ri.toolId;
-                Console.WriteLine("Rt.toolID is " + rt.toolID + " \n");
-                Console.WriteLine("ri.check is   " + ri.check + " \n");
+                //Console.WriteLine("Rt.toolID is " + rt.toolID + " \n");
+                //Console.WriteLine("ri.check is   " + ri.check + " \n");
                 rt.repairNeeded = ri.check;
-                Console.WriteLine("rt.repairNeeded is   " + rt.repairNeeded + " \n");
+                //Console.WriteLine("rt.repairNeeded is   " + rt.repairNeeded + " \n");
 
                 //Adds return ticket.
                 rt.InventoryId2 = ri.InventoryId;
-                Console.WriteLine("ri.InventoryId is " + ri.InventoryId + " \n");
-                Console.WriteLine("rt.InventoryId2 is " + rt.InventoryId2 + " \n");
+                //Console.WriteLine("ri.InventoryId is " + ri.InventoryId + " \n");
+                //Console.WriteLine("rt.InventoryId2 is " + rt.InventoryId2 + " \n");
 
                 switch (ri.check)
                 {
@@ -146,8 +146,8 @@ namespace EQtrack.Controllers
                 }
                  Console.WriteLine("again ri.check is   " + ri.check + " \n");
  
-                if (ri.InventoryId == null) { Console.WriteLine("ri.InventoryId is null" + " \n"); }
-                if (rt.InventoryId2 == null){ Console.WriteLine("rt.InventoryId2 is null" + " \n"); }
+                //if (ri.InventoryId == null) { Console.WriteLine("ri.InventoryId is null" + " \n"); }
+                //if (rt.InventoryId2 == null){ Console.WriteLine("rt.InventoryId2 is null" + " \n"); }
 
                 rt.userEmail = _contextAccessor.HttpContext.User.Identity.Name;
                 
@@ -158,7 +158,7 @@ namespace EQtrack.Controllers
 
                 //This needs to be added to.
                 //Will send the item to claims for repair.
-                Console.WriteLine("again gain, ri.check is   " + ri.check + " \n");
+                //Console.WriteLine("again gain, ri.check is   " + ri.check + " \n");
                 if (ri.check)
                 {
 
@@ -194,8 +194,25 @@ namespace EQtrack.Controllers
                     dt.repairNeeded = ri.check;
                     dt.InventoryId = ri.InventoryId;
                     dt.AdminId = "NONE";
-                    //dt.InventoryId;
-                    //dt.timeStamp = DateTime.Now;
+
+
+
+                    //this is needed because i added foreign key to the Damaageditems.invenoryid
+                    //Meaning instead of item segfaults.
+                    int? newInvId = dt.InventoryId;
+                    //Returns null if not found
+                    inventory? checkInventory2 = _context.Inventories.Find(newInvId);
+                        if (checkInventory2 == null)
+                        {
+
+                        //checkInventoryExists = false;
+                        //return NotFound();
+                        //return RedirectToAction("index");
+                        inventory inv = _context.Inventories.Where(e => e.toolID == ri.toolId).First();
+                        dt.InventoryId = inv.id;
+
+                        }
+
                     _context.DamagedItems.Add(dt);
                     _context.SaveChanges();
 

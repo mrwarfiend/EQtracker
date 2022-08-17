@@ -54,8 +54,8 @@ namespace EQtrack.Controllers
 
                 //return NotFound(); }
 
-                Console.WriteLine("DamagedItem.toolId is " + DamagedItem.toolId + " \n");
-                Console.WriteLine("DamagedItems.InventoryId is " + DamagedItem.InventoryId + " \n");
+                //Console.WriteLine("DamagedItem.toolId is " + DamagedItem.toolId + " \n");
+                //Console.WriteLine("DamagedItems.InventoryId is " + DamagedItem.InventoryId + " \n");
                 //Ok, so these command lines get the right stuff. But in the next block everything goes to hell.
                 if (t.name != null)
                 {
@@ -69,8 +69,8 @@ namespace EQtrack.Controllers
         public IActionResult ReturnFunc(DamagedItem dt)
         {
             if (dt.AdminId != "NONE") {
-                Console.WriteLine("Here is NOne  " + " \n");
-                Console.WriteLine("dt.AdminId  is  " + dt.AdminId + " \n");
+                //Console.WriteLine("Here is NOne  " + " \n");
+                //Console.WriteLine("dt.AdminId  is  " + dt.AdminId + " \n");
                 return RedirectToAction("index");
 
             }
